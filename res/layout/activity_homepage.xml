@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/steal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    android:orientation="vertical"
+    tools:context=".HomepageActivity" >
+
+    <Button
+        android:id="@+id/view_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edit_account"
+        android:layout_alignRight="@+id/edit_account"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/submit_button_background"
+        android:text="@string/view_stats" />
+
+    <Button
+        android:id="@+id/edit_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_stats"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/submit_button_background"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/edit_account" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edit_account"
+        android:layout_alignRight="@+id/edit_account"
+        android:layout_below="@+id/edit_account"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/submit_button_background"
+        android:text="@string/logout" />
+
+    <Button
+        android:id="@+id/new_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_stats"
+        android:layout_alignLeft="@+id/view_stats"
+        android:layout_alignRight="@+id/view_stats"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/submit_button_background"
+        android:text="@string/new_game" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/new_game"
+        android:layout_alignLeft="@+id/new_game"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/new_game"
+        android:contentDescription="@string/statitician_logo"
+        android:padding="10dp"
+        android:src="@drawable/statlogo100" />
+    
+</RelativeLayout>

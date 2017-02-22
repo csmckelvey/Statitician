@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/steal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    android:shrinkColumns="&quot;*&quot;"
+    android:stretchColumns="&quot;*&quot;"
+    tools:context=".LoginActivity" >
+
+    <TextView
+        android:id="@+id/title"
+        android:textSize="80sp"
+        android:text="@string/sign_in"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="60dip"
+        android:paddingRight="60dip"
+        android:paddingBottom="20dip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        />
+    
+    <EditText
+        android:id="@+id/email"
+        android:hint="@string/email"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignRight="@+id/title"
+        android:inputType="textEmailAddress"
+        android:imeOptions="flagNavigateNext"
+        ><requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/password"
+        android:hint="@string/password"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignRight="@+id/title"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"
+        />
+    
+    <CheckBox
+        android:id="@+id/saveBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/registerBox"
+        android:layout_alignLeft="@+id/title"
+        android:layout_below="@+id/password"
+        android:text="@string/save_check"
+        android:textColor="#FFFFFF"
+        android:textStyle="italic" />
+    
+    <CheckBox
+        android:id="@+id/registerBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/title"
+        android:layout_below="@+id/password"
+        android:text="@string/register_check"
+        android:textColor="#FFFFFF"
+        android:textStyle="italic" />
+    
+    <Button
+        android:id="@+id/submit_button"
+        android:text="@string/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/saveBox"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignRight="@+id/title"
+        android:layout_marginTop="30dip"
+        android:background="@drawable/submit_button_background"
+        />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/submit_button"
+        android:layout_alignRight="@+id/submit_button"
+        android:layout_below="@+id/submit_button"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/submit_button_background"
+        android:text="@string/exit" />
+    
+</RelativeLayout>

@@ -1,0 +1,356 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/steal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    android:shrinkColumns="&quot;*&quot;"
+    android:stretchColumns="&quot;*&quot;"
+    tools:context=".DashboardActivity" >
+
+    <TextView
+        android:id="@+id/opponent_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/clock_seconds"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/player_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/clock_minutes"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/clock_seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/opponent_score"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/clock_divider"
+        android:gravity="left|center"
+        android:text="00"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/clock_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/player_score"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/clock_divider"
+        android:gravity="center"
+        android:text="00"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/clock_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/opponent_score"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text=":"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <ImageButton
+        android:id="@+id/pause_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/opponent_goal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/start_button"
+        android:src="@android:drawable/ic_media_pause" />
+
+    <ImageButton
+        android:id="@+id/pass_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/player_score"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/check40" />
+
+    <TextView
+        android:id="@+id/passLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pass_bad"
+        android:layout_alignRight="@+id/clock_minutes"
+        android:layout_below="@+id/player_score"
+        android:layout_toRightOf="@+id/pass_bad"
+        android:gravity="center"
+        android:text="@string/dashboard_pass"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/shotLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/shot_bad"
+        android:layout_alignLeft="@+id/passLabel"
+        android:layout_alignRight="@+id/passLabel"
+        android:layout_alignTop="@+id/shot_good"
+        android:gravity="center"
+        android:text="@string/dashboard_shot"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/stealLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/steal_good"
+        android:layout_alignLeft="@+id/shotLabel"
+        android:layout_alignRight="@+id/passLabel"
+        android:layout_alignTop="@+id/steal_good"
+        android:gravity="center"
+        android:text="@string/dashboard_steal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/foulLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/foul_good"
+        android:layout_alignLeft="@+id/stealLabel"
+        android:layout_alignRight="@+id/passLabel"
+        android:layout_alignTop="@+id/foul_bad"
+        android:gravity="center"
+        android:text="@string/dashboard_foul"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
+
+    <ImageButton
+        android:id="@+id/shot_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/pass_good"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/check40" />
+
+    <ImageButton
+        android:id="@+id/steal_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/shot_good"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/check40" />
+
+    <ImageButton
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/foul_good"
+        android:layout_below="@+id/foul_good"
+        android:src="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/foul_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/steal_good"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/check40" />
+
+    <ImageButton
+        android:id="@+id/pass_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/pass_good"
+        android:layout_toRightOf="@+id/pass_good"
+        android:src="@drawable/redx40" />
+
+    <ImageButton
+        android:id="@+id/shot_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pass_bad"
+        android:layout_below="@+id/pass_bad"
+        android:src="@drawable/redx40" />
+
+    <ImageButton
+        android:id="@+id/steal_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/shot_bad"
+        android:layout_below="@+id/shot_bad"
+        android:src="@drawable/redx40" />
+
+    <ImageButton
+        android:id="@+id/foul_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/steal_bad"
+        android:layout_below="@+id/steal_bad"
+        android:src="@drawable/redx40" />
+
+    <ImageButton
+        android:id="@+id/player_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/opponent_score"
+        android:src="@drawable/check40" />
+
+    <ImageButton
+        android:id="@+id/player_assist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/player_goal"
+        android:src="@drawable/check40" />
+
+    <ImageButton
+        android:id="@+id/team_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/player_assist"
+        android:src="@drawable/check40" />
+
+    <ImageButton
+        android:id="@+id/opponent_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/team_goal"
+        android:src="@drawable/redx40" />
+
+    <TextView
+        android:id="@+id/playergoalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/player_goal"
+        android:layout_alignLeft="@+id/clock_seconds"
+        android:layout_below="@+id/opponent_score"
+        android:layout_toLeftOf="@+id/player_goal"
+        android:gravity="center"
+        android:text="@string/dashboard_player_goal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/playerassistLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/player_assist"
+        android:layout_alignLeft="@+id/playergoalLabel"
+        android:layout_below="@+id/playergoalLabel"
+        android:layout_toLeftOf="@+id/player_assist"
+        android:gravity="center"
+        android:text="@string/dashboard_player_assist"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/teamgoalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/team_goal"
+        android:layout_alignLeft="@+id/playerassistLabel"
+        android:layout_below="@+id/playerassistLabel"
+        android:layout_toLeftOf="@+id/team_goal"
+        android:gravity="center"
+        android:text="@string/dashboard_team_goal"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/opponentgoalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/opponent_goal"
+        android:layout_alignLeft="@+id/teamgoalLabel"
+        android:layout_below="@+id/teamgoalLabel"
+        android:layout_toLeftOf="@+id/opponent_goal"
+        android:gravity="center"
+        android:text="@string/dashboard_opponent_goal"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/feedbackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/foul_bad"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/foul_bad"
+        android:layout_alignTop="@+id/myScoreSubtract"
+        android:src="@android:drawable/ic_menu_sort_by_size" />
+
+    <ImageButton
+        android:id="@+id/opponentScoreSubtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/opponentgoalLabel"
+        android:layout_toLeftOf="@+id/pause_button"
+        android:src="@android:drawable/ic_delete" />
+
+    <ImageButton
+        android:id="@+id/opponentScoreAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/opponentScoreSubtract"
+        android:layout_toLeftOf="@+id/opponentScoreSubtract"
+        android:src="@android:drawable/ic_input_add" />
+
+    <ImageButton
+        android:id="@+id/myScoreSubtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/myScoreAdd"
+        android:layout_toRightOf="@+id/feedbackButton"
+        android:src="@android:drawable/ic_delete" />
+
+    <ImageButton
+        android:id="@+id/myScoreAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/finish_game_button"
+        android:layout_toRightOf="@+id/myScoreSubtract"
+        android:src="@android:drawable/ic_input_add" />
+
+    <Button
+        android:id="@+id/finish_game_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/foulLabel"
+        android:layout_toLeftOf="@+id/opponentScoreAdd"
+        android:layout_toRightOf="@+id/myScoreAdd"
+        android:text="Submit Game" />
+
+</RelativeLayout>

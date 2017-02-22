@@ -1,0 +1,443 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/steal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    android:shrinkColumns="&quot;*&quot;"
+    android:stretchColumns="&quot;*&quot;"
+    tools:context=".DashboardActivity" >
+
+    <ImageView
+        android:id="@+id/playerIcon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/player_score"
+        android:src="@drawable/person400" />
+
+    <ListView
+        android:id="@+id/feedbackList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/playerIcon"
+        android:layout_below="@+id/playerIcon"
+        android:background="#FFFFFF"
+        android:transcriptMode="alwaysScroll" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/opponent_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/playerIcon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="top"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="120sp"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/clock_seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/playerIcon"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/opponent_score"
+        android:background="#000000"
+        android:gravity="center_vertical"
+        android:paddingRight="120dp"
+        android:text="00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="70sp"
+        android:textStyle="italic"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/clock_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/playerIcon"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/clock_seconds"
+        android:background="#000000"
+        android:gravity="center_vertical"
+        android:text=" : "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="70sp"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/clock_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/playerIcon"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/clock_divider"
+        android:background="#000000"
+        android:gravity="center_vertical"
+        android:paddingLeft="120dp"
+        android:text="00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="70sp"
+        android:textStyle="italic"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/player_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/playerIcon"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/clock_minutes"
+        android:gravity="top"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="120sp"
+        android:typeface="monospace" />
+
+    <ImageButton
+        android:id="@+id/pass_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/feedbackList"
+        android:layout_toRightOf="@+id/feedbackList"
+        android:background="#444444"
+        android:paddingLeft="40dp"
+        android:paddingTop="40dp"
+        android:src="@drawable/check100" />
+
+    <ImageButton
+        android:id="@+id/pass_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/player_score"
+        android:layout_alignTop="@+id/feedbackList"
+        android:background="#444444"
+        android:paddingRight="40dp"
+        android:paddingTop="40dp"
+        android:src="@drawable/redx100" />
+
+    <ImageButton
+        android:id="@+id/shot_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pass_good"
+        android:layout_below="@+id/pass_good"
+        android:background="#444444"
+        android:paddingLeft="40dp"
+        android:paddingTop="40dp"
+        android:src="@drawable/check100" />
+
+    <ImageButton
+        android:id="@+id/steal_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/shot_good"
+        android:layout_below="@+id/shot_good"
+        android:background="#444444"
+        android:paddingLeft="40dp"
+        android:paddingTop="40dp"
+        android:src="@drawable/check100" />
+
+    <ImageButton
+        android:id="@+id/foul_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/steal_good"
+        android:layout_below="@+id/steal_good"
+        android:background="#444444"
+        android:paddingLeft="40dp"
+        android:paddingTop="40dp"
+        android:src="@drawable/check100" />
+
+    <ImageButton
+        android:id="@+id/shot_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pass_bad"
+        android:layout_alignTop="@+id/shot_good"
+        android:background="#444444"
+        android:paddingRight="40dp"
+        android:paddingTop="40dp"
+        android:src="@drawable/redx100" />
+
+    <ImageButton
+        android:id="@+id/steal_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/player_score"
+        android:layout_alignTop="@+id/steal_good"
+        android:layout_below="@+id/shot_bad"
+        android:background="#444444"
+        android:paddingRight="40dp"
+        android:paddingTop="40dp"
+        android:src="@drawable/redx100" />
+
+    <ImageButton
+        android:id="@+id/foul_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/player_score"
+        android:layout_alignTop="@+id/foul_good"
+        android:layout_below="@+id/steal_bad"
+        android:background="#444444"
+        android:paddingRight="40dp"
+        android:paddingTop="40dp"
+        android:src="@drawable/redx100" />
+
+    <TextView
+        android:id="@+id/passLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pass_bad"
+        android:layout_alignTop="@+id/pass_bad"
+        android:layout_toLeftOf="@+id/clock_divider"
+        android:layout_toRightOf="@+id/pass_bad"
+        android:gravity="center"
+        android:text="@string/dashboard_pass"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/shotLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/shot_bad"
+        android:layout_alignLeft="@+id/passLabel"
+        android:layout_below="@+id/passLabel"
+        android:layout_toLeftOf="@id/clock_divider"
+        android:gravity="center"
+        android:text="@string/dashboard_shot"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/stealLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/steal_bad"
+        android:layout_alignLeft="@+id/shotLabel"
+        android:layout_below="@+id/shotLabel"
+        android:layout_toLeftOf="@id/clock_divider"
+        android:gravity="center"
+        android:text="@string/dashboard_steal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/foulLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/foul_bad"
+        android:layout_alignLeft="@+id/stealLabel"
+        android:layout_below="@+id/stealLabel"
+        android:layout_toLeftOf="@id/clock_divider"
+        android:gravity="center"
+        android:text="@string/dashboard_foul"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/playergoalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/passLabel"
+        android:layout_alignLeft="@+id/clock_divider"
+        android:layout_alignTop="@+id/passLabel"
+        android:layout_toLeftOf="@+id/opponent_score"
+        android:gravity="center"
+        android:paddingRight="10dip"
+        android:text="@string/dashboard_player_goal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="45sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/playerassistLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/shotLabel"
+        android:layout_alignLeft="@+id/playergoalLabel"
+        android:layout_alignTop="@+id/shotLabel"
+        android:layout_toLeftOf="@+id/opponent_score"
+        android:gravity="center"
+        android:paddingRight="10dip"
+        android:text="@string/dashboard_player_assist"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="45sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/teamgoalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/stealLabel"
+        android:layout_alignLeft="@+id/playerassistLabel"
+        android:layout_alignTop="@+id/stealLabel"
+        android:layout_toLeftOf="@+id/opponent_score"
+        android:gravity="center"
+        android:paddingRight="10dip"
+        android:text="@string/dashboard_team_goal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="45sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/opponentgoalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/foulLabel"
+        android:layout_alignLeft="@+id/teamgoalLabel"
+        android:layout_alignRight="@+id/teamgoalLabel"
+        android:layout_below="@+id/teamgoalLabel"
+        android:gravity="center"
+        android:paddingRight="10dip"
+        android:text="@string/dashboard_opponent_goal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="45sp"
+        android:textStyle="italic" />
+
+    <ImageButton
+        android:id="@+id/player_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/playergoalLabel"
+        android:layout_alignLeft="@+id/opponent_score"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/playergoalLabel"
+        android:background="#444444"
+        android:paddingTop="40dp"
+        android:src="@drawable/check100" />
+
+    <ImageButton
+        android:id="@+id/player_assist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/playerassistLabel"
+        android:layout_alignLeft="@+id/opponent_score"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/playerassistLabel"
+        android:background="#444444"
+        android:paddingTop="40dp"
+        android:src="@drawable/check100" />
+
+    <ImageButton
+        android:id="@+id/team_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/teamgoalLabel"
+        android:layout_alignLeft="@+id/opponent_score"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/teamgoalLabel"
+        android:background="#444444"
+        android:paddingTop="40dp"
+        android:src="@drawable/check100" />
+
+    <ImageButton
+        android:id="@+id/opponent_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/opponentgoalLabel"
+        android:layout_alignLeft="@+id/opponent_score"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/opponentgoalLabel"
+        android:background="#444444"
+        android:paddingTop="40dp"
+        android:src="@drawable/redx100" />
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/foul_good"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/foul_good"
+        android:layout_alignTop="@+id/start_button"
+        android:text="CLEAR" />
+
+    <Button
+        android:id="@+id/finish_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/foulLabel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/opponentgoalLabel"
+        android:text="Submit Game"/>
+
+    <ImageButton
+        android:id="@+id/pause_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:soundEffectsEnabled="true"
+        android:src="@android:drawable/ic_media_pause" />
+
+    <ImageButton
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/pause_button"
+        android:soundEffectsEnabled="true"
+        android:src="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/opponentScoreAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/finish_game_button"
+        android:src="@android:drawable/ic_input_add" />
+
+    <ImageButton
+        android:id="@+id/opponentScoreSubtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/opponentScoreAdd"
+        android:src="@android:drawable/ic_delete" />
+
+    <ImageButton
+        android:id="@+id/myScoreAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/finish_game_button"
+        android:src="@android:drawable/ic_input_add" />
+
+    <ImageButton
+        android:id="@+id/myScoreSubtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/myScoreAdd"
+        android:src="@android:drawable/ic_delete" />
+
+</RelativeLayout>
